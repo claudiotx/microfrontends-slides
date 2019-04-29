@@ -1,0 +1,16 @@
+`cd src`
+`ng new angular-footer`
+`add the spa ./index.js for attachment purposes`
+Ok, now go to `root-app.js` and register the app for one of the routes.
+`npm start`
+Oops: 'ERROR in ./src/angular-footer/src/app/app.module.ts' Can't resolve.
+Head down to the `app.module.ts` and add a `.ts` extension on the file being loaded.
+Let's try again.
+Oops: E2E Tests are now failing
+Ok, let's update the template importing and external scss loading on the component
+Oops: Better, but another runtime error from single-spa2.
+Will take a bit of time to load, as we are running 1 common bundle (Angular4 + React15, and 2 separated bundles Angular7)
+Ok, `app.module.ts` needs to export a default class
+Oops: Another error: The selector "app-root" did not match any elements
+Lets update our bootstrap component `app.component.ts` to point to the correct DOM element.
+And Voila!
